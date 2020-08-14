@@ -13,7 +13,7 @@ export function enableButton() {
 }
 
 export function newGameClick() {
-  console.log(game);
+  // console.log(game);
   game = new Game(playerOne.value, playerTwo.value);
   playerOne.value = "";
   playerTwo.value = "";

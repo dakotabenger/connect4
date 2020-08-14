@@ -10,22 +10,26 @@ import { updateUI } from "./view.js";
 
 updateUI();
 playerOne.addEventListener("keyup", (event) => {
-    enableButton();
+  enableButton();
 });
 
 playerTwo.addEventListener("keyup", (event) => {
-    enableButton();
+  enableButton();
 });
 
 newGameButton.addEventListener("click", (event) => {
-    newGameClick();
-    console.log(game);
+  newGameClick();
+  // console.log(game);
 });
 clickTargets.addEventListener("click", (event) => {
-  let columnElement = event.target.id.slice(-1);
-  let columnNumber = parseInt(columnElement);
-  game.playInColumn(columnNumber);
-  updateUI();
+  if (game.winnerNumber === 0) {
+    let columnElement = event.target.id.slice(-1);
+    let columnNumber = parseInt(columnElement);
+    if (!game.isColumnFull(columnNumber)) {
+      game.playInColumn(columnNumber);
+      updateUI();
+    }
+  }
 });
 
 // parent class for player

@@ -122,3 +122,7 @@ main {
   background-color: white;
   cursor: no-drop;
 }
+
+#game-name {
+  text-align: center;
+}

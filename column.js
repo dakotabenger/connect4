@@ -16,7 +16,7 @@ export default class Column {
     if (index > 5 || index < 0) {
       return;
     } else if (this.ColumnArr[index] === "empty") {
-      return null;
+      return "empty"
     } else {
       return this.ColumnArr[index];
     }
@@ -24,7 +24,7 @@ export default class Column {
   isFull() {
     let isTrue = false;
     this.ColumnArr[0] === "empty" ? (isTrue = false) : (isTrue = true);
-    console.log(isTrue)
+    // console.log(isTrue)
     return isTrue;
   }
 }
